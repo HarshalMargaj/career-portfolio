@@ -20,13 +20,19 @@ export default function RootLayout({
 	children: React.ReactNode;
 }>) {
 	return (
-		<html lang="en">
-			<body className={`${rubikFont.variable} antialiased bg-black`}>
-				<div className="flex h-screen bg-amber-300/10 text-primary">
+		<html lang="en" suppressHydrationWarning>
+			<body
+				className={`${rubikFont.variable} antialiased bg-neutral-950`}
+			>
+				<div className="flex h-screen bg-amber-500/5 text-amber-100">
 					<Sidebar />
-					<main className="border border-amber-100/10 w-full m-5 rounded-lg bg-amber-400/5">
+					<main
+						className="w-full m-5 ml-0 rounded-xl
+			border border-amber-100/10
+			bg-neutral-900/50 backdrop-blur"
+					>
 						<Navbar />
-						<div className="p-5 ">{children}</div>
+						<div className="p-5">{children}</div>
 					</main>
 				</div>
 			</body>

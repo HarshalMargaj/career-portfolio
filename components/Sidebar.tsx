@@ -31,7 +31,7 @@ const Sidebar = () => {
 	const pathname = usePathname();
 
 	return (
-		<div className="w-75 p-5 pr-0 space-y-4">
+		<div className="w-75 p-5 space-y-4">
 			<div className="flex justify-center items-center flex-col gap-2">
 				<Image
 					src="/profile.jpeg"
@@ -51,14 +51,28 @@ const Sidebar = () => {
 				{sidebarItems.map(item => {
 					const isActive = pathname === item.route;
 					return (
+						// <div
+						// 	key={item.name}
+						// 	onClick={() => router.push(item.route)}
+						// 	className={`cursor-pointer p-2 ${
+						// 		isActive
+						// 			? "bg-amber-600"
+						// 			: "hover:bg-amber-600/15"
+						// 	} font-normal rounded-md transition-all`}
+						// >
+						// 	{item.name}
+						// </div>
 						<div
 							key={item.name}
 							onClick={() => router.push(item.route)}
-							className={`cursor-pointer p-2 ${
-								isActive
-									? "bg-amber-600"
-									: "hover:bg-amber-600/15"
-							} font-normal rounded-md transition-all`}
+							className={`
+		cursor-pointer p-2 rounded-md font-normal transition-all
+		${
+			isActive
+				? "bg-amber-500/15 text-amber-200"
+				: "text-amber-100/80 hover:bg-amber-500/10 hover:text-amber-200"
+		}
+	`}
 						>
 							{item.name}
 						</div>
