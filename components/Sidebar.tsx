@@ -35,7 +35,7 @@ const Sidebar = () => {
 	const pathname = usePathname();
 
 	return (
-		<div className="w-85 p-5 space-y-4">
+		<div className="w-95 p-5 space-y-4">
 			<div className="flex justify-center items-center flex-col gap-2">
 				<Image
 					src="/profile.jpeg"
@@ -45,8 +45,8 @@ const Sidebar = () => {
 					className="rounded-full"
 				/>
 				<div className="text-center">
-					<div className="text-xl">Harshal Margaj</div>
-					<div className="text-sm text-secondary">
+					<div className="text-2xl">Harshal Margaj</div>
+					<div className="text-lg text-secondary">
 						Frontend Developer
 					</div>
 				</div>
@@ -58,7 +58,7 @@ const Sidebar = () => {
 						<div
 							key={item.name}
 							onClick={() => router.push(item.route)}
-							className={`text-lg cursor-pointer p-2 rounded-md font-normal transition-all
+							className={`text-xl cursor-pointer p-2 rounded-md font-normal transition-all
 							${
 								isActive
 									? "bg-amber-500/15 text-amber-200"

@@ -13,6 +13,7 @@
 	--font-sans: var(--font-geist-sans);
 	--font-mono: var(--font-geist-mono);
 	--font-rub: var(--font-rubik);
+	--font-nun: var(--font-nunito);
 	--color-primary: var(--primary-text);
 	--color-secondary: var(--secondary-text);
 }

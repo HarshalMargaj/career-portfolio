@@ -3,11 +3,18 @@ import "./globals.css";
 import Sidebar from "@/components/Sidebar";
 import Navbar from "@/components/Navbar";
 import { Rubik } from "next/font/google";
+// import { Nunito } from "next/font/google";
+// import { Poppins } from "next/font/google";
 
 const rubikFont = Rubik({
 	variable: "--font-rubik",
 	subsets: ["latin"],
 });
+
+// const nunitoFont = Nunito({
+// 	variable: "--font-nunito",
+// 	subsets: ["latin"],
+// });
 
 export const metadata: Metadata = {
 	title: "Create Next App",
