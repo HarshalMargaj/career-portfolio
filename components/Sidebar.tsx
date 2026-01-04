@@ -1,6 +1,7 @@
 "use client";
 
-import { useRouter } from "next/navigation";
+import Image from "next/image";
+import { usePathname, useRouter } from "next/navigation";
 
 const sidebarItems = [
 	{
@@ -27,18 +28,43 @@ const sidebarItems = [
 
 const Sidebar = () => {
 	const router = useRouter();
+	const pathname = usePathname();
 
 	return (
-		<div className="w-75 p-5 pr-0">
-			{sidebarItems.map(item => (
-				<div
-					key={item.name}
-					onClick={() => router.push(item.route)}
-					className="cursor-pointer p-2 hover:bg-amber-600 font-semibold rounded-md transition-all"
-				>
-					{item.name}
+		<div className="w-75 p-5 pr-0 space-y-4">
+			<div className="flex justify-center items-center flex-col gap-2">
+				<Image
+					src="/profile.jpeg"
+					width={100}
+					height={100}
+					alt="profile_image"
+					className="rounded-full"
+				/>
+				<div className="text-center">
+					<div className="text-lg">Harshal Margaj</div>
+					<div className="text-xs text-secondary">
+						Frontend Developer
+					</div>
 				</div>
-			))}
+			</div>
+			<div>
+				{sidebarItems.map(item => {
+					const isActive = pathname === item.route;
+					return (
+						<div
+							key={item.name}
+							onClick={() => router.push(item.route)}
+							className={`cursor-pointer p-2 ${
+								isActive
+									? "bg-amber-600"
+									: "hover:bg-amber-600/15"
+							} font-normal rounded-md transition-all`}
+						>
+							{item.name}
+						</div>
+					);
+				})}
+			</div>
 		</div>
 	);
 };
