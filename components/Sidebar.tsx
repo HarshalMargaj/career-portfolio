@@ -13,6 +13,10 @@ const sidebarItems = [
 		route: "/education",
 	},
 	{
+		name: "Skills",
+		route: "/skills",
+	},
+	{
 		name: "Experience",
 		route: "/experience",
 	},
