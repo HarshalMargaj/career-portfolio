@@ -1,4 +1,5 @@
 import ProfessionalLinks from "@/components/ProfessionalLinks";
+import { FileUser, Github, Linkedin } from "lucide-react";
 
 const contactDetails = {
 	"Social and Professional Links": [
@@ -7,18 +8,21 @@ const contactDetails = {
 			platform: "GitHub",
 			link: "https://github.com/HarshalMargaj",
 			placeholder: "GitHub",
+			// icon: <Github />,
 		},
 		{
 			id: 2,
 			platform: "LinkedIn",
 			link: "https://www.linkedin.com/in/harshal-margaj/",
 			placeholder: "LinkedIn",
+			// icon: <Linkedin />,
 		},
 		{
 			id: 3,
 			platform: "Resume/CV",
 			link: "https://drive.google.com/file/d/1zy0QvOaZbxY_4vm2gLQikhYKg1hsJ7hq/view?usp=drive_link",
 			placeholder: "Resume/CV",
+			// icon: <FileUser />,
 		},
 	],
 	"Coding Profiles": [
