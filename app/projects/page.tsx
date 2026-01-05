@@ -1,4 +1,7 @@
+"use client";
+
 import Link from "next/link";
+import { useRouter } from "next/navigation";
 import slugify from "slugify";
 
 const projectDetails = [
@@ -31,48 +34,57 @@ const projectDetails = [
 	},
 ];
 
-const page = () => {
+const Page = () => {
+	const router = useRouter();
+
 	return (
 		<div className="space-y-4">
 			<div className="text-4xl">Projects</div>
 			<div className="space-y-8">
 				{projectDetails.map(detail => (
-					<Link
+					<div
+						onClick={() =>
+							router.push(
+								`/projects/${slugify(detail.title, {
+									lower: true,
+								})}`
+							)
+						}
 						key={detail.id}
-						href={`/projects/${slugify(detail.title, {
-							lower: true,
-						})}`}
-						className="block"
+						className="bg-neutral-800/60 backdrop-blur border border-amber-100/10 rounded-md p-5 relative space-y-4"
 					>
-						<div className="bg-neutral-800/60 backdrop-blur border border-amber-100/10 rounded-md p-5 relative space-y-4">
-							<div className="text-xl">{detail.title}</div>
-							<div className="text-lg opacity-70">
-								{detail.description}
-							</div>
-
-							<div className="absolute -top-5 right-2 bg-neutral-800/90 backdrop-blur border border-amber-100/10 rounded-md p-2 py-1 text-base">
-								{detail.duration}
-							</div>
-							<div className="absolute -top-5 left-100 bg-neutral-800/90 backdrop-blur border border-amber-100/10 rounded-md p-2 py-1 text-base space-x-2 shadow shadow-neutral-600">
-								<Link
-									href={detail.github}
-									className="border-amber-100/10 border-r h-full pr-2 "
-								>
-									<span>Source Code</span>
-								</Link>
-								<Link
-									href={detail.demo}
-									className="text-amber-500"
-								>
-									Live Demo
-								</Link>
-							</div>
+						<div className="text-xl">{detail.title}</div>
+						<div className="text-lg opacity-70">
+							{detail.description}
 						</div>
-					</Link>
+
+						<div className="absolute -top-5 right-2 bg-neutral-800/90 backdrop-blur border border-amber-100/10 rounded-md p-2 py-1 text-base">
+							{detail.duration}
+						</div>
+						<div
+							onClick={e => e.stopPropagation()}
+							className="absolute -top-5 left-100 bg-neutral-800/90 backdrop-blur border border-amber-100/10 rounded-md p-2 py-1 text-base space-x-2 shadow shadow-neutral-600"
+						>
+							<Link
+								href={detail.github}
+								className="border-amber-100/10 border-r h-full pr-2"
+								target="_blank"
+							>
+								<span>Source Code</span>
+							</Link>
+							<a
+								href={detail.demo}
+								className="text-amber-500"
+								target="_blank"
+							>
+								Live Demo
+							</a>
+						</div>
+					</div>
 				))}
 			</div>
 		</div>
 	);
 };
 
-export default page;
+export default Page;
