@@ -29,17 +29,16 @@ export default function RootLayout({
 	return (
 		<html lang="en" suppressHydrationWarning>
 			<body
-				className={`${rubikFont.variable} antialiased bg-neutral-950`}
+				className={`${rubikFont.variable} antialiased bg-neutral-950 overflow-hidden`}
 			>
 				<div className="flex h-screen bg-amber-500/5 text-amber-100">
 					<Sidebar />
-					<main
-						className="w-full m-5 ml-0 rounded-xl
-			border border-amber-100/10
-			bg-neutral-900/50 backdrop-blur"
-					>
+					<main className="w-full m-5 ml-0 rounded-xl border border-amber-100/10 bg-neutral-900/50 backdrop-blur overflow-hidden flex flex-col">
 						<Navbar />
-						<div className="p-5">{children}</div>
+
+						<div className="flex-1 p-5 overflow-y-auto ">
+							{children}
+						</div>
 					</main>
 				</div>
 			</body>
