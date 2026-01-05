@@ -25,14 +25,14 @@ const page = () => {
 				{educationDetails.map(detail => (
 					<div
 						key={detail.id}
-						className="bg-neutral-800/60 backdrop-blur border border-neutral-100/10 rounded-md p-5 relative flex items-center justify-between"
+						className="bg-neutral-800/60 backdrop-blur border border-amber-100/10 rounded-md p-5 relative flex items-center justify-between"
 					>
 						<div>
 							<div className="text-xl">{detail.education}</div>
 							<div className="text-base text-amber-100/50">
 								{detail.college}
 							</div>
-							<div className="absolute -top-4 right-2 bg-neutral-800/90 backdrop-blur border border-neutral-100/10 rounded-md p-2 py-1 text-base">
+							<div className="absolute -top-4 right-2 bg-neutral-800/90 backdrop-blur border border-amber-100/10 rounded-md p-2 py-1 text-base">
 								{detail.duration}
 							</div>
 						</div>
