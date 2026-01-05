@@ -1,5 +1,4 @@
 import ProfessionalLinks from "@/components/ProfessionalLinks";
-import { FileUser, Github, Linkedin } from "lucide-react";
 
 const contactDetails = {
 	"Social and Professional Links": [

@@ -9,7 +9,6 @@ interface ProfessionalLinksProps {
 				platform: string;
 				link: string;
 				placeholder: string;
-				icon: React.ReactNode;
 		  }[]
 		| undefined;
 }
